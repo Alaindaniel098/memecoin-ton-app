@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Memecoins TON</title>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    button, input { width: 100%; padding: 10px; margin: 5px 0; }
+  </style>
+</head>
+<body>
+  <h1>Plataforma de Memecoins</h1>
+  <button onclick="connectWallet()">Conectar Billetera TON</button>
+  <div id="create" style="display: none;">
+    <input id="name" placeholder="Nombre del Memecoin">
+    <input id="symbol" placeholder="Símbolo">
+    <button onclick="createMemecoin()">Crear</button>
+  </div>
+  <div id="list" style="display: none;">
+    <h2>Lista de Memecoins</h2>
+    <ul id="memecoins"></ul>
+  </div>
+
+  <script>
+    function connectWallet() {
+      alert('Billetera conectada (simulado)');
+      document.getElementById('create').style.display = 'block';
+      document.getElementById('list').style.display = 'block';
+      const memecoins = ['Meme1 (M1)', 'Meme2 (M2)'];
+      const ul = document.getElementById('memecoins');
+      memecoins.forEach(coin => {
+        const li = document.createElement('li');
+        li.textContent = coin;
+        ul.appendChild(li);
+      });
+    }
+    function createMemecoin() {
+      const name = document.getElementById('name').value;
+      const symbol = document.getElementById('symbol').value;
+      if (name && symbol) {
+        alert(`Creado: ${name} (${symbol}) - Simulado`);
+      } else {
+        alert('Llena los campos');
+      }
+    }
+  </script>
+</body>
+    </html>
